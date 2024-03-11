@@ -60,7 +60,7 @@ export const login = (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ id: data[0].id }, "jwtkey", { expiresIn: '1h' });
+    const token = jwt.sign({ id: data[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     // Omit sensitive data from response
     const { password, ...other } = data[0];

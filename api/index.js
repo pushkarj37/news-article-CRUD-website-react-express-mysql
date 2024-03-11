@@ -6,10 +6,14 @@ import cookieParser from "cookie-parser";
 import multer from "multer";
 
 
-import dotenv from 'dotenv';
+import {config} from 'dotenv';
 
 
-dotenv.config();
+config(
+  {
+    path:"./config.env"
+  }
+)
 
 const app = express();
 
